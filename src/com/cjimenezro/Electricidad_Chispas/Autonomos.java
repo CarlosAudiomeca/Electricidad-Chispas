@@ -20,7 +20,7 @@ public class Autonomos implements Clientes {
 
     @Override
     public String getCorporationName() {
-        return nombre;
+        return nombre + " " + apellidos;
     }
 
     @Override
