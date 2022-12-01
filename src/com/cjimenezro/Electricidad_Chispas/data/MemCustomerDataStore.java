@@ -17,7 +17,7 @@ public class MemCustomerDataStore implements CustomerDataStore{
 
     @Override
     public void deleteCustomer(Clientes cliente) {
-        dataStore.remove(cliente);
+        dataStore.remove(cliente.getCodigoCliente());
     }
 
     @Override
@@ -32,6 +32,6 @@ public class MemCustomerDataStore implements CustomerDataStore{
 
     @Override
     public Clientes findById(Integer codCliente) {
-        return null;
+        return dataStore.get(codCliente);
     }
 }

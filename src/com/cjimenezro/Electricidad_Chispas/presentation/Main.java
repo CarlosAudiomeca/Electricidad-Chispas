@@ -139,8 +139,6 @@ public class Main {
         ImpresionFacturas.print(factura2);
 
     }
-    AddCustomerUseCase addCustomerUseCase = new AddCustomerUseCase();
-    addCustomerUseCase.execute(autonomo);
-    addCustomerUseCase.execute(sociedad);
+    //AddCustomerUseCase addCustomerUseCase = new AddCustomerUseCase();
 
 }

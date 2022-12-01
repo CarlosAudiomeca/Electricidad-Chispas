@@ -7,13 +7,14 @@ import com.cjimenezro.Electricidad_Chispas.domain.models.Clientes;
 import java.util.List;
 
 public class GetCustomerUseCase {
+    private CustomerDataStore customerDataStore;
 
-    public List<Clientes> execute(){
-        CustomerDataStore customerDataStore = new MemCustomerDataStore();
-        return customerDataStore.getAllCustomers();
-        public List<Clientes>execute() {
-            return customerDataStore.getAllCustomers();
-        }
+    public GetCustomerUseCase(CustomerDataStore customerDataStore){
+        this.customerDataStore=customerDataStore;
     }
+
+   public List<Clientes> execute(){
+        return customerDataStore.getAllCustomers();
+   }
 
 }
