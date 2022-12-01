@@ -1,4 +1,7 @@
-package com.cjimenezro.Electricidad_Chispas;
+package com.cjimenezro.Electricidad_Chispas.presentation;
+
+import com.cjimenezro.Electricidad_Chispas.domain.models.*;
+import com.cjimenezro.Electricidad_Chispas.domain.usecase.AddCustomerUseCase;
 
 import java.util.Scanner;
 
@@ -136,4 +139,8 @@ public class Main {
         ImpresionFacturas.print(factura2);
 
     }
+    AddCustomerUseCase addCustomerUseCase = new AddCustomerUseCase();
+    addCustomerUseCase.execute(autonomo);
+    addCustomerUseCase.execute(sociedad);
+
 }

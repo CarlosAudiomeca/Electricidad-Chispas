@@ -1,10 +1,10 @@
-package com.cjimenezro.Electricidad_Chispas;
+package com.cjimenezro.Electricidad_Chispas.domain.models;
 
-public class Sociedades implements Clientes{
+public class Autonomos implements Clientes {
 
     private Integer codigoCliente,telefono;
 
-    private String razonSocial,cif,direccionPostal,poblacion,provincia,email;
+    private String nombre,apellidos,dni,direccionPostal,poblacion, provincia,email;
 
     //Funciones
 
@@ -15,27 +15,34 @@ public class Sociedades implements Clientes{
 
     @Override
     public void setCodigoCliente(Integer codigoCliente) {
-        this.codigoCliente=codigoCliente;
+        this.codigoCliente = codigoCliente;
     }
 
     @Override
     public String getCorporationName() {
-        return razonSocial;
+        return nombre + " " + apellidos;
     }
 
     @Override
     public void setCorporatioName(String corporatioName) {
-        this.razonSocial = corporatioName;
+        this.nombre = corporatioName;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+    public void setApellidos(String apellidos){
+        this.apellidos = apellidos;
     }
 
     @Override
     public String getCorporationId() {
-        return cif;
+        return dni;
     }
 
     @Override
     public void setCorporationId(String corpotarionId) {
-        this.cif=corpotarionId;
+        this.dni = corpotarionId;
     }
 
     @Override
@@ -55,7 +62,7 @@ public class Sociedades implements Clientes{
 
     @Override
     public void setPoblacion(String poblacion) {
-        this.poblacion=poblacion;
+        this.poblacion= poblacion;
     }
 
     @Override
@@ -65,7 +72,7 @@ public class Sociedades implements Clientes{
 
     @Override
     public void setProvincia(String provincia) {
-        this.provincia=provincia;
+        this.provincia =provincia;
     }
 
     @Override
