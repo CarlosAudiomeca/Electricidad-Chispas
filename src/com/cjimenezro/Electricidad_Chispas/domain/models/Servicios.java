@@ -1,4 +1,4 @@
-package com.cjimenezro.Electricidad_Chispas;
+package com.cjimenezro.Electricidad_Chispas.domain.models;
 
 public class Servicios implements ProductosServicios{
     private int codigo,precio,tipoIva;
