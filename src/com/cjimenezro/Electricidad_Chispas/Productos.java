@@ -1,4 +1,4 @@
-package com.cjimenezro.Electricidad_Chispas.domain.models;
+package com.cjimenezro.Electricidad_Chispas;
 
 public class Productos implements ProductosServicios{
 

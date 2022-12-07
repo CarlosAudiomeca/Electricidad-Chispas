@@ -1,6 +1,6 @@
-package com.cjimenezro.Electricidad_Chispas.presentation;
+package com.cjimenezro.Electricidad_Chispas;
 
-import com.cjimenezro.Electricidad_Chispas.domain.models.Facturas;
+import com.cjimenezro.Electricidad_Chispas.Facturas;
 
 public class ImpresionFacturas {
 

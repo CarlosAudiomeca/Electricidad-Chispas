@@ -1,14 +1,5 @@
-package com.cjimenezro.Electricidad_Chispas.presentation;
+package com.cjimenezro.Electricidad_Chispas;
 
-import com.cjimenezro.Electricidad_Chispas.data.CustomerDataStore;
-import com.cjimenezro.Electricidad_Chispas.data.MemCustomerDataStore;
-import com.cjimenezro.Electricidad_Chispas.domain.models.*;
-import com.cjimenezro.Electricidad_Chispas.domain.usecase.AddCustomerUseCase;
-import com.cjimenezro.Electricidad_Chispas.domain.usecase.DeleteCustomerUseCase;
-import com.cjimenezro.Electricidad_Chispas.domain.usecase.GetCustomerUseCase;
-import com.cjimenezro.Electricidad_Chispas.domain.usecase.UpdateCustomerUseCase;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -143,39 +134,6 @@ public class Main {
 
         ImpresionFacturas.print(factura);
         ImpresionFacturas.print(factura2);
-
-        CustomerDataStore customerDataStore = new MemCustomerDataStore();
-
-        AddCustomerUseCase addCustomerUseCase = new AddCustomerUseCase(customerDataStore);
-        addCustomerUseCase.execute(autonomo);
-        addCustomerUseCase.execute(sociedad);
-
-        GetCustomerUseCase getCustomerUseCase = new GetCustomerUseCase(customerDataStore);
-        List<Clientes> customers = getCustomerUseCase.execute();
-        for (int i =0;i<customers.size();i++){
-            printCliente(customers.get(i));
-        }
-
-        DeleteCustomerUseCase deleteCustomerUseCase = new DeleteCustomerUseCase(customerDataStore);
-        deleteCustomerUseCase.execute(autonomo);
-        List<Clientes> customers2 = getCustomerUseCase.execute();
-        for (int i = 0; i < customers2.size(); i++) {
-            printCliente(customers2.get(i));
-        }
-
-        sociedad.setEmail("0000000000");
-        UpdateCustomerUseCase updateCustomerUseCase = new UpdateCustomerUseCase(customerDataStore);
-        updateCustomerUseCase.execute(sociedad);
-        List<Clientes> customers3 = getCustomerUseCase.execute();
-        for (int i = 0; i < customers3.size(); i++) {
-            printCliente(customers3.get(i));
-        }
-
-
-
-        public static void printCliente(Clientes cliente) {
-            System.out.println("Cod: " + cliente.getCodCliente() + " Nombre: " + cliente.getNombre() + " Email: " + cliente.getEmail());
-        }
 
     }
 
